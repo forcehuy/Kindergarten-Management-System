@@ -17,25 +17,25 @@
                    <a href="?"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Course<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Class<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add-course.php">Add Course</a>
+                                    <a href="add-course.php">Add Class</a>
                                 </li>
                                 <li>
-                                    <a href="view-course.php">View</a>
+                                    <a href="view-course.php">View Class</a>
                                 </li>
                             </ul>
                             </li>
                 
                  <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Subject<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Teacher<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add-subject.php">Add Subject</a>
+                                    <a href="add-subject.php">Add Teacher</a>
                                 </li>
                                 <li>
-                                    <a href="view-subject.php">View</a>
+                                    <a href="view-subject.php">View Teacher</a>
                                 </li>
                             </ul>
                            

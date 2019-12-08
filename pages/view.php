@@ -75,8 +75,8 @@ if (! (isset ( $_SESSION ['login'] ))) {
 											<th>Name</th>
                                             <th>Email</th>
                                             <th>MobNO</th>
-											<th>Course</th>
-											<th>Subject</th>
+											<th>Class</th>
+											<th>Teacher</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -93,8 +93,8 @@ if (! (isset ( $_SESSION ['login'] ))) {
 									 ?>	
                                         <tr class="odd gradeX">
                               <td><?php echo $sn?></td>
-                              <td><?php echo htmlentities( strtoupper($res->regno));?></td>
-             <td><?php echo htmlentities(strtoupper($res->fname." ".$res->mname." ".$res->lname));?></td>
+                              <td><?php echo htmlentities(strtoupper($res->regno));?></td>
+             <td><?php echo htmlentities(strtoupper($res->fname." ".$res->lname));?></td>
        <td><?php echo htmlentities(strtoupper($res->emailid));?></td>
 	  <td><?php echo htmlentities($res->mobno);?></td>
 	  <td><?php echo htmlentities(strtoupper($res1->cshort));?></td>

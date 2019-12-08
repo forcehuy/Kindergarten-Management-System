@@ -15,7 +15,7 @@ class DbFunction{
    else{		
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection();
-	$query = "SELECT loginid, password FROM tbl_login where loginid=? and password=? ";
+	$query = "SELECT loginid, password FROM tbl_login where loginid=? and password=?";
 	$stmt= $mysqli->prepare($query);
 	if(false===$stmt){
 		
@@ -52,18 +52,13 @@ class DbFunction{
 		}
 		
 		
-		else if($cfull==""){
-			 
-			echo "<script>alert('Select  Course Full Name')</script>";
-		
-		}
 		
 		else{
 			
 			
 			$db = Database::getInstance();
 			$mysqli = $db->getConnection();
-			$query = "insert into tbl_course(cshort,cfull,cdate)values(?,?,?)";
+			$query = "insert into tbl_course(cshort,cdate)values(?,?)";
 			$stmt= $mysqli->prepare($query);
 			if(false===$stmt){
 			
@@ -72,9 +67,9 @@ class DbFunction{
 			
 			else{
 			
-				$stmt->bind_param('sss',$cshort,$cfull,$cdate);
+				$stmt->bind_param('ss',$cshort,$cdate);
 				$stmt->execute();
-				echo "<script>alert('Course Added Successfully')</script>";
+				echo "<script>alert('Class Added Successfully')</script>";
 					//header('location:login.php');
 				
 			}
@@ -133,27 +128,16 @@ function showSubject1($sid){
 }
 
 
-function create_subject($cshort,$cfull,$sub1,$sub2,$sub3){
+function create_subject($cshort,$sub1,$sub2,$sub3){
 		
-				if($cshort==""){
-			 
-			echo "<script>alert('Select  Course Short Name')</script>";
-		
+		if($cshort==""){	 
+			echo "<script>alert('Select Class Short Name')</script>";
 		}
-		
-		
-		else if($cfull==""){
-			 
-			echo "<script>alert('Select  Course Full Name')</script>";
-		
-		}
-		
+
 		else{
-			
-			
 			$db = Database::getInstance();
 			$mysqli = $db->getConnection();
-			$query = "insert into subject(cshort,cfull,sub1,sub2,sub3)values(?,?,?,?,?)";
+			$query = "insert into subject(cshort,sub1,sub2,sub3)values(?,?,?,?)";
 			$stmt= $mysqli->prepare($query);
 			if(false===$stmt){
 			
@@ -162,9 +146,9 @@ function create_subject($cshort,$cfull,$sub1,$sub2,$sub3){
 			
 			else{
 			
-				$stmt->bind_param('sssss',$cshort,$cfull,$sub1,$sub2,$sub3);
+				$stmt->bind_param('ssss',$cshort,$sub1,$sub2,$sub3);
 				$stmt->execute();
-				echo "<script>alert('Course Added Successfully')</script>";
+				echo "<script>alert('Teacher added Successfully')</script>";
 					
 				
 			}
@@ -201,19 +185,14 @@ function showStudents1($id){
 	
 }	
 
-function register($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$income,$category,$ph,
-                  $nation,$mobno,$email,$country,$state,$city,$padd,$cadd,$board1,$board2,$roll1,$roll2,
-				   $pyear1,$pyear2,$sub1,$sub2,$marks1,$marks2,$fmarks1,$fmarks2,$session){
+function register($cshort,$cfull,$fname,$lname,$gender,$mobno,$email,$padd,$session){
  			          
  			        $db = Database::getInstance();
 		           	$mysqli = $db->getConnection();
 		           	
 		           //	echo $session;exit;
-   $query = "INSERT INTO `registration` (`course`, `subject`, `fname`, `mname`, `lname`, `gender`, `gname`, `ocp`,
-                     `income`, `category`, `pchal`, `nationality`, `mobno`, `emailid`, `country`, `state`, `dist`, 
-					 `padd`, `cadd`, `board`, `board1`,`roll`,`roll1`,`pyear`,`yop1`,`sub`,`sub1`,`marks`,`marks1`,
-					 `fmarks`,`fmarks1`,`session`,regno) 
-                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+   $query = "INSERT INTO `registration` (`course`, `subject`, `fname`, `lname`, `gender`,  `mobno`, `emailid`, `padd`,`session`,`regno`) 
+                   VALUES(?,?,?,?,?,?,?,?,?,?)";
 			        $reg=rand();
 			        $stmt= $mysqli->prepare($query);
 			        if(false===$stmt){
@@ -223,10 +202,7 @@ function register($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$incom
 			
 			    else{
 			
-			$stmt->bind_param('sssssssssssssssssssssssssssssssss',
-		         	$cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$income,$category,$ph,$nation,$mobno,
-					$email,$country,$state,$city,$padd,$cadd,$board1,$board2,$roll1,$roll2,$pyear1,$pyear2,
-					$sub1,$sub2,$marks1,$marks2,$fmarks1,$fmarks2,$session,$reg);
+			$stmt->bind_param('ssssssssss', $cshort,$cfull,$fname,$lname,$gender,$mobno,$email,$padd,$session,$reg);
 			$stmt->execute();
 		   	echo "<script>alert('Successfully Registered , your registration number is $reg')</script>";
 		 	//header('location:login.php');
@@ -238,17 +214,17 @@ function register($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$incom
        }
 
 
-function edit_course($cshort,$cfull,$udate,$id){
+function edit_course($cshort,$udate,$id){
 
     $db = Database::getInstance();
 	$mysqli = $db->getConnection();
 	//echo $cshort.$cfull.$udate.$id;exit;
-	$query = "update tbl_course set cshort=?,cfull=? ,update_date=? where cid=?";
+	$query = "update tbl_course set cshort=? ,update_date=? where cid=?";
 	$stmt= $mysqli->prepare($query);
-	$stmt->bind_param('sssi',$cshort,$cfull,$udate,$id);
+	$stmt->bind_param('ssi',$cshort,$udate,$id);
 	$stmt->execute();
     echo '<script>'; 
-    echo 'alert("Course Updated Successfully")'; 
+    echo 'alert("Data Updated Successfully")'; 
     echo '</script>';
 
 }
@@ -258,26 +234,21 @@ function edit_subject($sub1,$sub2,$sub3,$udate,$id){
 
     $db = Database::getInstance();
 	$mysqli = $db->getConnection();
-	$query = "update subject set sub1=?,sub2=? ,sub3=?,update_date=? where subid=?";
+	$query = "update subject set sub1=?,sub2=? ,sub3=?, update_date=? where subid=?";
 	$stmt= $mysqli->prepare($query);
 	$stmt->bind_param('ssssi',$sub1,$sub2,$sub3,$udate,$id);
 	$stmt->execute();
     echo '<script>'; 
-    echo 'alert("Subject Updated Successfully")'; 
+    echo 'alert("Data Updated Successfully")'; 
     echo '</script>';
 
 }
 
-function edit_std($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$income,$category,$ph,
-                  $nation,$mobno,$email,$country,$state,$city,$padd,$cadd,$board1,$board2,$roll1,$roll2,
-				   $pyear1,$pyear2,$sub1,$sub2,$marks1,$marks2,$fmarks1,$fmarks2,$id){
+function edit_std($cshort,$cfull,$fname,$lname,$gender,$mobno,$email,$padd,$id){
   // echo $id;exit;
     $db = Database::getInstance();
 	$mysqli = $db->getConnection();
-	$query = "update registration set course=?,subject=?,fname=?,mname=?,lname=?,gender=?,gname=?,ocp=?
-              , income=?,category=?,pchal=?,nationality=?,mobno=?,emailid=?,country=?,state=?,dist=?
-         	 ,padd=?,cadd=?,board=?,roll=?,pyear=?,sub=?,marks=?,fmarks=?,board1=?,roll1=?,yop1=?,sub1=?
-              ,marks1=?,fmarks1=? where id=?" ;
+	$query = "update registration set course=?,subject=?,fname=?,lname=?,gender=?,mobno=?,emailid=?, where id=?" ;
     //echo $query;
 	$stmt= $mysqli->prepare($query);
 	if(false===$stmt){
@@ -285,9 +256,8 @@ function edit_std($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$incom
 			     	trigger_error("Error in query: " . mysqli_connect_error(),E_USER_ERROR);
 			    }
 
-	$rc=$stmt->bind_param('sssssssssssssssssssssssssssssssi',$cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$income,$category,$ph,
-                  $nation,$mobno,$email,$country,$state,$city,$padd,$cadd,$board1,$board2,$roll1,$roll2,
-				   $pyear1,$pyear2,$sub1,$sub2,$marks1,$marks2,$fmarks1,$fmarks2,$id);
+	$rc=$stmt->bind_param('sssssssi',$cshort,$cfull,$fname,$lname,$gender,
+                  $mobno,$email,$id);
 				   
     //echo $rc;
  if ( false===$rc ) {

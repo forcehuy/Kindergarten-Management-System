@@ -64,7 +64,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            View Course
+                            View Student
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -73,8 +73,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
                                     <thead>
                                         <tr>
                                             <th>S No</th>
-                                            <th>Short Name</th>
-                                            <th>Full Name</th>
+                                            <th>Class Name</th>
                                             <th>Created Date</th>
                                             <th>Action</th>
                                         </tr>
@@ -86,8 +85,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
                                      while($res=$rs->fetch_object()){?>	
                                         <tr class="odd gradeX">
                                             <td><?php echo $sn?></td>
-                                            <td><?php echo htmlentities( strtoupper($res->cshort));?></td>
-                                            <td><?php echo htmlentities(strtoupper($res->cfull));?></td>
+                                            <td><?php echo htmlentities(strtoupper($res->cshort));?></td>
                                             <td><?php echo htmlentities($res->cdate);?></td>
                                              <td>&nbsp;&nbsp;<a href="edit-course.php?cid=<?php echo htmlentities($res->cid);?>"><p class="fa fa-edit"></p></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                              <a href="view-course.php?del=<?php echo htmlentities($res->cid); ?>"> <p class="fa fa-times-circle"></p></td>

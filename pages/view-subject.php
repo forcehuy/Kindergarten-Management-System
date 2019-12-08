@@ -11,6 +11,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 	$rs=$obj->showSubject();
 
 
+
 	if(isset($_GET['del']))
     {
            
@@ -78,7 +79,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            View Course
+                            View Teacher
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -87,9 +88,10 @@ if (! (isset ( $_SESSION ['login'] ))) {
                                     <thead>
                                         <tr>
                                             <th>S No</th>
-                                            <th>Subject1</th>
-                                            <th>Subject2</th>
-                                            <th>Subject3</th>
+                                            <th>Teacher Name</th>
+                                            <th>Teacher ID</th>
+                                            <th>Teacher Email</th>
+                                            <th>Class Name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -100,9 +102,10 @@ if (! (isset ( $_SESSION ['login'] ))) {
                                      while($res=$rs->fetch_object()){?>	
                                         <tr class="odd gradeX">
                                             <td><?php echo $sn?></td>
-                                            <td><?php echo htmlentities( strtoupper($res->sub1));?></td>
+                                            <td><?php echo htmlentities(strtoupper($res->sub1));?></td>
                                             <td><?php echo htmlentities(strtoupper($res->sub2));?></td>
-                                             <td><?php echo htmlentities(strtoupper($res->sub3));?></td>
+                                            <td><?php echo htmlentities(strtoupper($res->sub3));?></td>
+                                            <td><?php echo htmlentities(strtoupper($res->cshort));?></td>
                                             <td>&nbsp;&nbsp;<a href="edit-sub.php?sid=<?php echo htmlentities($res->subid);?>"><p class="fa fa-edit"></p></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                              <a href="view-subject.php?del=<?php echo htmlentities($res->subid); ?>"> <p class="fa fa-times-circle"></p></td>
                                             

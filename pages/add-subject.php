@@ -12,7 +12,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 	
 	$obj=new DbFunction();
 	
-	$obj->create_subject($_POST['course-short'],$_POST['course-full'],$_POST['sub1'],$_POST['sub2'],$_POST['sub3']);	
+	$obj->create_subject($_POST['course-short'],$_POST['sub1'],$_POST['sub2'],$_POST['sub3']);	
 	
 }
 
@@ -53,14 +53,14 @@ if (! (isset ( $_SESSION ['login'] ))) {
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Add Subject</div>
+						<div class="panel-heading">Add Teacher</div>
 						<div class="panel-body">
 							<div class="row">
 						 	<div class="col-lg-10">
 									
 										<div class="form-group">
 											<div class="col-lg-4">
-					 <label>Course Short Name<span id="" style="font-size:11px;color:Red">*</span>	</label>
+					 <label>Class Name<span id="" style="font-size:11px;color:Red">*</span>	</label>
 											</div>
 			
 			<div class="col-lg-6">
@@ -68,7 +68,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 			<option VALUE="">SELECT</option>
 				<?php while($res=$rs->fetch_object()){?>							
 			
-                        <option VALUE="<?php echo htmlentities($res->cid);?>"><?php echo htmlentities($res->cshort)?></option>
+                        <option VALUE="<?php echo htmlentities($res->cshort);?>"><?php echo htmlentities($res->cshort)?></option>
                         
                         
                     <?php }?>   			</div>
@@ -78,30 +78,11 @@ if (! (isset ( $_SESSION ['login'] ))) {
 					</div>
 					    </div>	
 										
-								<br><br>
+								<br><br>								
 								
 		<div class="form-group">
 		<div class="col-lg-4">
-		<label>Course Full Name<span id="" style="font-size:11px;color:red">*</span></label>
-		</div>
-		<div class="col-lg-6">
-		<select class="form-control" name="course-full"  id="cfull"required="required" onchange="coursefullAvail()">
-        <option VALUE="">SELECT</option>
-        <?php while($res1=$rs1->fetch_object()){?>							
-			
-     <option VALUE="<?php echo htmlentities($res1->cfull);?>"><?php echo htmlentities($res1->cfull)?></option>
-                        
-                        
-                    <?php }?>   
-       </select>
-	   <span id="course-status" style="font-size:12px;"></span>
-	 </div>
-	 </div>	
-	<br><br>								
-								
-		<div class="form-group">
-		<div class="col-lg-4">
-		<label>Subject1</label>
+		<label>Teacher Name</label>
 		</div>
 		<div class="col-lg-6">
 		<input class="form-control"  name="sub1">
@@ -111,7 +92,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 
      <div class="form-group">
 		<div class="col-lg-4">
-		<label>Subject2</label>
+		<label>Teacher ID</label>
 		</div>
 		<div class="col-lg-6">
 		<input class="form-control"  name="sub2">
@@ -120,7 +101,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 	<br><br>									
 	<div class="form-group">
 	<div class="col-lg-4">
-	 <label>Subject3</label>
+	 <label>Teacher Email</label>
 	</div>
 	<div class="col-lg-6">
 	<input class="form-control"  name="sub3">
@@ -135,7 +116,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
 												
 											</div>
 											<div class="col-lg-6"><br><br>
-	<input type="submit" class="btn btn-primary" name="submit" value="Add Subject"></button>
+	<input type="submit" class="btn btn-primary" name="submit" value="Add Teachers"></button>
 											</div>
 											
 										</div>		

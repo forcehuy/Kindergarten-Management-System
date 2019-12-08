@@ -17,13 +17,7 @@ include('../config/DbFunction.php');
 	if(isset($_POST['submit'])){
 	
      
-     $obj->register($_POST['course-short'],$_POST['c-full'],$_POST['fname'],$_POST['mname'],$_POST['lname'],
-     	            $_POST['gname'],$_POST['ocp'],$_POST['gender'],$_POST['income'],$_POST['category'],$_POST['ph'],$_POST['nation']
-
-     	             , $_POST['mobno'],$_POST['email'],$_POST['country'],$_POST['state'],$_POST['city'],$_POST['padd'],
-     	              $_POST['cadd'],$_POST['board1'],$_POST['board2'],$_POST['roll1'],$_POST['roll2'],$_POST['pyear1'],
-     	              $_POST['pyear2'],$_POST['sub1'],$_POST['sub2'],$_POST['marks1'],$_POST['marks2'],$_POST['fmarks1'],
-     	              $_POST['fmarks2'] ,$_POST['session']);
+    $obj->register($_POST['course-short'],$_POST['c-full'],$_POST['fname'],$_POST['lname'] ,$_POST['gender'], $_POST['mobno'], $_POST['email'],$_POST['padd'], $_POST['session']);
 	
 }
 ?>
@@ -68,7 +62,7 @@ include('../config/DbFunction.php');
 			<div class="col-lg-10">
 			<div class="form-group">
 		    <div class="col-lg-4">
-			<label>Select Course<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>Select Class<span id="" style="font-size:11px;color:red">*</span>	</label>
 			</div>
 			<div class="col-lg-6">
 <select class="form-control" name="course-short" id="cshort"  onchange="showSub(this.value)" required="required" >			
@@ -87,7 +81,7 @@ include('../config/DbFunction.php');
 								
 		<div class="form-group">
 		<div class="col-lg-4">
-		<label>Select Subject<span id="" style="font-size:11px;color:red">*</span></label>
+		<label>Teacher Name<span id="" style="font-size:11px;color:red">*</span></label>
 		</div>
 		<div class="col-lg-6">
  <input class="form-control" name="c-full"  id="c-full" >
@@ -99,7 +93,7 @@ include('../config/DbFunction.php');
 			
 			<div class="form-group">
 		<div class="col-lg-4">
-		<label>Current  Session<span id="" style="font-size:11px;color:red">*</span></label>
+		<label>Current Session<span id="" style="font-size:11px;color:red">*</span></label>
 		</div>
 		<div class="col-lg-6">
 		
@@ -134,17 +128,11 @@ include('../config/DbFunction.php');
 			<label>First Name<span id="" style="font-size:11px;color:red">*</span>	</label>
 			
 			</div>
+			
 			<div class="col-lg-4">
 			<input class="form-control" name="fname" required="required" pattern="[A-Za-z]+$">
 			</div>
-			 <div class="col-lg-2">
-			<label>Middle Name</label>
-			
-			</div>
-			<div class="col-lg-4">
-			<input class="form-control" name="mname">
-			</div>
-			</div>	
+			 
 			<br><br>
 								
 		<div class="form-group">
@@ -165,79 +153,7 @@ include('../config/DbFunction.php');
 			</div>
 			</div>	
 	<br><br>		
-		     <div class="form-group">
-			 <div class="col-lg-2">
-			<label>Guardian Name<span id="" style="font-size:11px;color:red">*</span>	</label>
-			
-			</div>
-			<div class="col-lg-4">
-			<input class="form-control" name="gname" required="required" pattern="[A-Za-z]+$">
-			</div>
-			 <div class="col-lg-2">
-			<label>Occupation</label>
-			
-			</div>
-			<div class="col-lg-4">
-			<input class="form-control" name="ocp" id="ocp">
-			</div>
-			</div>	
-			<br><br>
-					
-		     <div class="form-group">
-			 <div class="col-lg-2">
-			<label>Family Income<span id="" style="font-size:11px;color:red">*</span></label>
-			
-			</div>
-			<div class="col-lg-4">
-			<select class="form-control" name="income"  id="income"required="required" >
-        <option VALUE="">SELECT</option>
-        <option VALUE="200000">200000</option>
-        <option value="500000">500000</option>
-        <option value="700000">700000</option>
-        
-       </select>
-			</div>
-			 <div class="col-lg-2">
-			<label>Category<span id="" style="font-size:11px;color:red">*</span></label>
-			
-			</div>
-			<div class="col-lg-4">
-			<select class="form-control" name="category"  id="category" required="required" >
-        <option VALUE="">SELECT</option>
-        <option VALUE="general">General</option>
-        <option value="obc">OBC</option>
-        <option value="sc">SC</option>
-        <option value="st">ST</option>
-		<option value="other">Other</option>
-       </select>
-			</div>
-			</div>	
-			<br><br>
-			
-			
-					
-		     <div class="form-group">
-			 <div class="col-lg-2">
-			<label>Physically Challenged<span id="" style="font-size:11px;color:red">*</span></label>
-			
-			</div>
-			<div class="col-lg-4">
-			<select class="form-control" name="ph"  id="ph"required="required" >
-        <option VALUE="">SELECT</option>
-        <option VALUE="yes">Yes</option>
-        <option value="no">No</option>
-               
-       </select>
-			</div>
-			 <div class="col-lg-2">
-			<label>Nationality<span id="" style="font-size:11px;color:red">*</span></label>
-			
-			</div>
-			<div class="col-lg-4">
-			<input class="form-control" name="nation" id="nation">
-			</div>
-			</div>	
-			<br><br>
+		     
 			</div>	
 			<br><br>
 		</div>
@@ -268,44 +184,9 @@ include('../config/DbFunction.php');
 			</div>
 			</div>	
 			<br><br>
-								
-		<div class="form-group">
-		    <div class="col-lg-2">
-			<label>Country</label>
-			</div>
-			<div class="col-lg-4">
-			<select class="form-control" name="country" id="country" onchange="showState(this.value)" required="required" >			
-<option VALUE="">Select Country</option>
-				<?php while($res=$rs1->fetch_object()){?>							
 			
-   <option VALUE="<?php echo htmlentities($res->id);?>"><?php echo htmlentities($res->name)?></option>
-                        
-                        
-                    <?php }?>   </select>
-			</div>
-			 <div class="col-lg-2">
-			<label>State</label>
 			
-			</div>
-			<div class="col-lg-4">
- <select name="state" id="state"  class="form-control" onchange="showDist(this.value)" required="required">
-        <option value="">Select State</option>
-        </select>
-			</div>
 			
-			</div>	
-			
-	<br><br><br><br>		
-		     <div class="form-group">
-			 <div class="col-lg-2">
-			<label>City<span id="" style="font-size:11px;color:red">*</span>	</label>
-			
-			</div>
-			<div class="col-lg-4">
-           <select name="city" id="dist"  class="form-control" onchange="" required="required">
-        <option value="">Select City</option>
-		</select>
-			</div>
 			 <div class="col-lg-2">
 			<label>Permanent Address<span id="" style="font-size:11px;color:red">*</span></label>
 			
@@ -314,24 +195,14 @@ include('../config/DbFunction.php');
 			<textarea class="form-control" rows="3" name="padd" id="padd"></textarea>
 			</div>
 			</div>	
-			<br><br><br><br>
-					
-		     
 			<br><br>
-			
-			
 					
-		     <div class="form-group">
-			 <div class="col-lg-2">
-			<label>Correspondence Address<span id="" style="font-size:11px;color:red">*</span>
 			
-			</div>
-			<div class="col-lg-4">
-      <textarea class="form-control" rows="3" name="cadd"  id="cadd"></textarea>
-			</div>
 			 <div class="col-lg-2">
 			
-			
+			<div class="col-lg-6"><br><br>
+	<input type="submit" class="btn btn-primary" name="submit" value="Register"></button>
+	</div>
 			
 			</div>
 			<div class="col-lg-4">
@@ -346,121 +217,14 @@ include('../config/DbFunction.php');
 		</div>
       	</div>
 		</div>					
-        <div class="row">
-			<div class="col-lg-12">
-			<div class="panel panel-default">
-			<div class="panel-heading">Academic Informations</div>
-			<div class="panel-body">
-			<div class="row">
-			
-			<div class="col-lg-12">
-			<div class="form-group">
-		    <div class="panel panel-default">
-            <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                         <div class="col-lg-6">
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;Board<span id="" style="font-size:11px;color:red">*</span>	</label></th>
-			</div>   
-            <div class="col-lg-6">
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;Roll No</th>
-			</div>   
-              <div class="col-lg-6">
-			 <th>&nbsp;&nbsp;&nbsp;&nbsp;Year Of Passing<span id="" style="font-size:11px;color:red">*</span></th>
-			</div>                                 
-            </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr> 
-                  <td><div class="col-lg-6">
-				  <input class="form-control" type="text" name="board1">
-				  </div></td>
-                  <td><div class="col-lg-6">
-			<input class="form-control" type="text" name="roll1" >
-			</div></td>
-            <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="pyear1" >
-			</div></td>
-                  </tr>
-
-              <tr> 
-                  <td><div class="col-lg-6">
-				  <input class="form-control" type="text" name="board2" >
-				  </div></td>
-                  <td><div class="col-lg-6">
-			<input class="form-control" type="text" name="roll2" >
-			</div></td>
-            <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="pyear2" >
-			</div></td>
-                  </tr>      
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+        
                             <!-- /.table-responsive -->
                         
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                </div>
-			</div>	
-			<br><br>					
-		  </div>	
-			<br><br>			
-			<br><br>
-			<div class="col-lg-12">
-			<div class="form-group">
-		    <div class="panel panel-default">
-            <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                         <div class="col-lg-6">
-			<th>S.No</th>
-			</div>   
-            <div class="col-lg-6">
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;Subject</th>
-			</div>   
-              <div class="col-lg-6">
-			 <th>&nbsp;&nbsp;&nbsp;&nbsp;Marks Obtained</th>
-			</div>                                 
-             <div class="col-lg-6">
-			   <th>&nbsp;&nbsp;&nbsp;&nbsp;Full Marks</th>
-			</div>                               
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr> 
-                  <td>1</td>
-                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="sub1">
-			</div></td>
-                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="marks1">
-			</div></td>
-			                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="fmarks1">
-			</div></td>
-                  </tr>
-				  
-	         <tr> 
-                  <td>2</td>
-                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="sub2">
-			</div></td>
-                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="marks2">
-			</div></td>
-			                  <td><div class="col-lg-6">
-			<input class="form-control"  type="text" name="fmarks2">
-			</div></td>
-                  </tr>			  
+               
+			
                                         
                                     </tbody>
                                 </table>
@@ -479,9 +243,7 @@ include('../config/DbFunction.php');
 	<div class="form-group">
 	<div class="col-lg-4">
 	</div>
-	<div class="col-lg-6"><br><br>
-	<input type="submit" class="btn btn-primary" name="submit" value="Register"></button>
-	</div>
+	
 	</div>			
 	</div>
 	</div><!--row!-->		

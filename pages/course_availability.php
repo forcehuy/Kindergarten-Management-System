@@ -13,8 +13,6 @@ $stmt->execute();
 $stmt->bind_result($count);
 $stmt->fetch();
 $stmt->close();
-if($count>0)
-	echo "<span style='color:red'> Course Short Name Already Exist .</span>";
 }
 if(!empty($_POST['cshort1'])){
 $cshort=$_POST['cshort1'];
@@ -25,8 +23,6 @@ $stmt->execute();
 $stmt->bind_result($count);
 $stmt->fetch();
 $stmt->close();
-if($count>0)
-	echo "<span style='color:red'> Course Short Name Already Exist .</span>";
 }
 
 if(!empty($_POST['cfull'])){
@@ -38,8 +34,6 @@ if(!empty($_POST['cfull'])){
 	$stmt->bind_result($count);
 	$stmt->fetch();
 	$stmt->close();
-	if($count>0)
-		echo "<span style='color:red'> Course Full Name Already Exist .</span>";
 }
 
 if(!empty($_POST['cfull1'])){
@@ -51,8 +45,6 @@ if(!empty($_POST['cfull1'])){
 	$stmt->bind_result($count);
 	$stmt->fetch();
 	$stmt->close();
-	if($count>0)
-		echo "<span style='color:red'> Course Full Name Already Exist .</span>";
 }
 ?>
 

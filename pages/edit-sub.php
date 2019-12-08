@@ -71,14 +71,14 @@ if(isset($_POST['submit'])){
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Edit Subject</div>
+						<div class="panel-heading">Edit Teacher Info</div>
 						<div class="panel-body">
 							<div class="row">
 						 	<div class="col-lg-10">
 									
 										<div class="form-group">
 											<div class="col-lg-4">
-					 <label>Subject1</label>
+					 <label>Teacher Name</label>
 											</div>
 											<div class="col-lg-6">
 			
@@ -91,7 +91,7 @@ if(isset($_POST['submit'])){
 								
 		<div class="form-group">
 		<div class="col-lg-4">
-		<label>Subject2</label>
+		<label>Teacher ID</label>
 		</div>
 		<div class="col-lg-6">
 <input class="form-control" name="sub2" id="sub2" value="<?php echo $res->sub2;?>" required="required">         
@@ -101,7 +101,7 @@ if(isset($_POST['submit'])){
 	 <br><br>								
 			<div class="form-group">
 		<div class="col-lg-4">
-		<label>Subject3</label>
+		<label>Teacher Email</label>
 		</div>
 		<div class="col-lg-6">
 <input class="form-control" name="sub3" id="sub3" value="<?php echo $res->sub3;?>" required="required">         

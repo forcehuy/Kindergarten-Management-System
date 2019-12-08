@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
 	
 	 // echo  $id=$_GET['cid'];exit;
 		//echo $_POST['course-short'].$_POST['course-full'].$_POST['udate'].$id;exit;
-	$obj->edit_course($_POST['course-short'],$_POST['course-full'],$_POST['udate'],$id);
+	$obj->edit_course($_POST['course-short'],$_POST['udate'],$id);
 	
 }
 
@@ -81,7 +81,7 @@ if(isset($_POST['submit'])){
 									
 										<div class="form-group">
 											<div class="col-lg-4">
-					 <label>Course Short Name<span id="" style="font-size:11px;color:red">*</span>	</label>
+					 <label>Class Name<span id="" style="font-size:11px;color:red">*</span>	</label>
 											</div>
 											<div class="col-lg-6">
 			
@@ -90,18 +90,7 @@ if(isset($_POST['submit'])){
 											
 										</div>	
 										
-								<br><br>
-								
-		<div class="form-group">
-		<div class="col-lg-4">
-		<label>Course Full Name<span id="" style="font-size:11px;color:red">*</span></label>
-		</div>
-		<div class="col-lg-6">
-<input class="form-control" name="course-full" id="cfull" value="<?php echo $res->cfull;?>" required="required"  onblur="coursefullAvail()">         
-	<span id="course-status" style="font-size:12px;"></span>				</div>
-	 </div>	
-										
-	 <br><br>								
+								<br><br>								
 										
 	<div class="form-group">
 	<div class="col-lg-4">

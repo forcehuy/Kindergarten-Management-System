@@ -275,13 +275,13 @@ if (!(isset($_SESSION['login']))) {
                    <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Course<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Student<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add-course.php">Add Course</a>
+                                    <a href="add-course.php">Add Student</a>
                                 </li>
                                 <li>
-                                    <a href="?">View</a>
+                                    <a href="?">View Student</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

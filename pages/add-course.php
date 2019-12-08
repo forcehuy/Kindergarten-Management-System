@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 	
 	include('../config/DbFunction.php');
 	$obj=new DbFunction();
-	$obj->create_course($_POST['course-short'],$_POST['course-full'],$_POST['cdate']);
+	$obj->create_course($_POST['course-short'],$_POST['cdate']);
 	
 }
 
@@ -64,14 +64,14 @@ if(isset($_POST['submit'])){
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Add Course</div>
+						<div class="panel-heading">Add Class</div>
 						<div class="panel-body">
 							<div class="row">
 						 	<div class="col-lg-10">
 									
 										<div class="form-group">
 											<div class="col-lg-4">
-					 <label>Course Short Name<span id="" style="font-size:11px;color:red">*</span>	</label>
+					 <label>Class Name<span id="" style="font-size:11px;color:red">*</span>	</label>
 											</div>
 											<div class="col-lg-6">
 			
@@ -80,18 +80,7 @@ if(isset($_POST['submit'])){
 											
 										</div>	
 										
-								<br><br>
-								
-		<div class="form-group">
-		<div class="col-lg-4">
-		<label>Course Full Name<span id="" style="font-size:11px;color:red">*</span></label>
-		</div>
-		<div class="col-lg-6">
-		<input class="form-control" name="course-full" id="cfull" required="required"  onblur="coursefullAvail()">         
-	<span id="course-status" style="font-size:12px;"></span>				</div>
-	 </div>	
-										
-	 <br><br>								
+								<br><br>								
 										
 	<div class="form-group">
 	<div class="col-lg-4">
@@ -111,7 +100,7 @@ if(isset($_POST['submit'])){
 												
 											</div>
 											<div class="col-lg-6"><br><br>
-							<input type="submit" class="btn btn-primary" name="submit" value="Create Course"></button>
+							<input type="submit" class="btn btn-primary" name="submit" value="Create Classs"></button>
 											</div>
 											
 										</div>		
