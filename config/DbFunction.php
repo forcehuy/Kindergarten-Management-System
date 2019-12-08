@@ -43,7 +43,7 @@ class DbFunction{
 	
 	}
 	
-	function create_course($cshort,$cfull,$cdate){
+	function create_course($cshort,$cdate){
 		
 				if($cshort==""){
 			 
